@@ -1,0 +1,14 @@
+{
+  "name": "node-3dexplorer",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "2.4.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "author": "Dominique Hazaël-Massieux <dom@w3.org> (http://www.w3.org/People/Dom/)",
+  "description": "Prototype of accelerometer-enabled app that allows to manipulate a 3D object viewed via another page",
+  "main": "apps.js"
+}
