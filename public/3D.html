@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head><title>3D explorer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+<p>This page allows you to explore a 3 dimensional graphics showed on a <a href="html5logo.html">separate page</a>, on a separate screen.</p>
+
+<p id="support">Your device doesn't seem to support the <a href="dev.w3.org/geo/api/spec-source-orientation.html">DeviceOrientation events</a> used by this demonstration.</p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
+<script>
+jQuery(document).ready(function ($) {
+if (typeof window.DeviceMotionEvent != undefined) {
+  $("#support").text("Your device can be used for this demonstration: moving your device around will animate the HTML5 logo");
+  window.addEventListener('deviceorientation', function (e) {
+    $.post('/rotate', {"alpha": e.alpha, "beta": e.beta, "gamma": e.gamma});
+  }, false);
+}
+});
+</script>
+
+<address><a href="https://github.com/dontcallmedom/node-3dexplorer">node-3dexplorer on github</a></address>
+</body>
+</html>

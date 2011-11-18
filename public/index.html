@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head><title>3D explorer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body>
+<h1>3D Explorer</h1>
+<h2>Introduction</h2>
+
+<p>This demo shows how to use one device (equipped with an accelerometer) to explore in 3 dimensions an object shown on the screen of another device, using only off-the-shelf Web technologies.</p>
+
+<h2>Instructions</h2>
+<ul>
+<li>Load the <a href="html5logo.html">3D object</a> on a given device, typically a regular computer browser</li>
+<li>Load the <a href="3D.html">3D-explorer page</a> on a device with an accelerometer and a browser supporting the accelerometer API (e.g. iPhone &gt; 4, iPad, Firefox on Android, Android browser &gt; 3.0)</li>
+<li>Move the second device and see how the object is animated on the first screen in sync</li>
+</ul>
+
+<h2>Under the hood</h2>
+
+<p>The movements of the second device are captured using <a href="http://dev.w3.org/geo/api/spec-source-orientation.html">W3C DeviceOrientation Events</a>, sent to a proxy server built using <a href="http://nodejs.org/">node.js</a>, and then dispatched to the first device via <a href="http://dev.w3.org/html5/eventsource/">Server-Sent events</a>.</p>
+
+<p>The HTML5 3D logo is built using HTML5’s <a href="http://www.w3.org/TR/2dcontext/"><code>canvas</code></a> element.</p>
+
+<p>The <a href="http://www.kevs3d.co.uk/dev/html5logo/">HTML5 3D logo animation</a> itself comes from <a href="http://www.kevs3d.co.uk/">Kevin Roast’s 3D demos</a>, using the <a href="https://launchpad.net/canvask3d">canvas K3D library</a>.></p>
+
+<p>The code for this demonstration is available on <a href="https://github.com/dontcallmedom/node-3dexplorer">github</a>.</p>
+
+<address><a href="http://www.w3.org/People/Dom/">Dominique Hazael-Massieux</a> (<a href="http://twitter.com/dontcallmedom">@dontcallmedom</a>)</address>
+</body>
+</html>
