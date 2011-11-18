@@ -10,7 +10,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> 
 <script>
 jQuery(document).ready(function ($) {
-if (typeof window.DeviceMotionEvent != undefined) {
+if (typeof window.DeviceOrientationEvent != undefined) {
   $("#support").text("Your device can be used for this demonstration: moving your device around will animate the HTML5 logo");
   window.addEventListener('deviceorientation', function (e) {
     $.post('/rotate', {"alpha": e.alpha, "beta": e.beta, "gamma": e.gamma});
