@@ -13,7 +13,7 @@ This code [can be used live](http://strong-summer-2638.herokuapp.com/) and can b
 
 ##  Under the hood
 
-The movements of the second device are captured using W3C DeviceOrientation Events, sent to a proxy server built using node.js, and then dispatched to the first device via Server-Sent events.
+The movements of the second device are captured using W3C DeviceOrientation Events, sent to a server built using node.js that acts as a relay,  dispatching them to the first device via Server-Sent events.
 
 The HTML5 3D logo is built using HTML5’s canvas element.
 
