@@ -5,7 +5,7 @@ This demo shows how to use one device (equipped with an accelerometer) to explor
 
 ## Instructions
 
-* Load the 3D object (html5logo.html) on a given device, typically a regular computer browser
+* Load the 3D object (html5logo.html) on a given device, typically a regular computer browser that supports [Server-Sent events](http://dev.w3.org/html5/eventsource/).
 * Load the 3D-explorer (3D.html) page on a device with an accelerometer and a browser supporting the accelerometer API (e.g. iPhone > 4, iPad, Firefox on Android, Android browser > 3.0)
 * Move the second device and see how the object is animated on the first screen in sync
 
