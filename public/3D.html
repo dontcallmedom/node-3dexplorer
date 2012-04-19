@@ -12,11 +12,8 @@
 jQuery(document).ready(function ($) {
 if (typeof window.DeviceOrientationEvent != undefined) {
   $("#support").text("Your device can be used for this demonstration: moving your device around will animate the HTML5 logo");
-  var count = 0;
   window.addEventListener('deviceorientation', function (e) {
-    if (count % 1000 == 0) {
-      $.post('/rotate', {"alpha": e.alpha, "beta": e.beta, "gamma": e.gamma});
-    }
+    $.post('/rotate', {"alpha": e.alpha, "beta": e.beta, "gamma": e.gamma});
   }, false);
      
 }
