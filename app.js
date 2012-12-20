@@ -1,7 +1,7 @@
 var express = require('express');
 var EventEmitter = require('events').EventEmitter;
 var emitter = new EventEmitter();
-var app = express.createServer();
+var app = express();
 var fs = require('fs');
 
 var eventQueue = [];
@@ -50,4 +50,4 @@ app.get('/stream', function(req, res) {
 });
 
 app.listen(app.set('port'));
-console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+console.log("Express server listening on port %d in %s mode", app.set('port'), app.settings.env);

@@ -1,8 +1,8 @@
 {
   "name": "node-3dexplorer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
-    "express": "2.4.2"
+    "express": ">= 3.0"
   },
   "devDependencies": {},
   "engines": {
