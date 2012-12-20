@@ -11,11 +11,23 @@
 <script>
 jQuery(document).ready(function ($) {
 if (typeof window.DeviceOrientationEvent != "undefined") {
-  $("#support").text("Your device can be used for this demonstration: moving your device around will animate the HTML5 logo");
-  window.addEventListener('deviceorientation', function (e) {
-    $.post('/rotate', {"alpha": e.alpha, "beta": e.beta, "gamma": e.gamma});
-  }, false);
-     
+  $("#support").text("Your device can be used for this demonstration: moving your device will animate the HTML5 logo");
+  $("#support").append($("<input type='button' id='start' value='Start'>"));
+  var rotate = function(e) {
+     $.post('/rotate', {"alpha": e.alpha, "beta": -e.beta, "gamma": e.gamma});
+  };
+  var enabled = false;
+  $("#start").click(function() {
+    if (!enabled) {
+       window.addEventListener('deviceorientation', rotate, false);
+       $("#start").val("Stop");
+       enabled = true;
+    } else {
+       window.removeEventListener('deviceorientation', rotate, false);
+       enabled = false;
+       $("#start").val("Start");
+   }    
+  });
 }
 });
 </script>
